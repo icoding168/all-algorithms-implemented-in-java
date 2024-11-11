@@ -31,6 +31,7 @@ class LinkedQueueTest {
 
         queue.enqueue(20);
         queue.enqueue(30);
+        queue.enqueue(40);
         assertEquals(3, queue.size(), "Queue size should be 3 after three enqueues.");
     }
 

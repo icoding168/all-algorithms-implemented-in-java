@@ -45,6 +45,7 @@ public class LinkedQueue<T> implements Iterable<T> {
      *
      * @param data the element to insert.
      * @throws IllegalArgumentException if data is null.
+     *
      */
     public void enqueue(T data) {
         if (data == null) {
@@ -52,6 +53,12 @@ public class LinkedQueue<T> implements Iterable<T> {
         }
 
         Node<T> newNode = new Node<>(data);
+
+        /*
+            front == rear == 1
+            rear.next = 2, rear = 2  ->   rear.next == front.next == 2, rear == front.next
+            rear.next = 3, rear = 3 ->    front.next.next = 3   rear == front.next.next
+         */
 
         if (isEmpty()) {
             front = newNode;
